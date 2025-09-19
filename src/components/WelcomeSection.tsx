@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { useApp } from '@/context/AppContext';
-import { Eye, Package, ShoppingCart, Calendar, BarChart3 } from 'lucide-react';
+import { Glasses, Package, ShoppingCart, Calendar, BarChart3 } from 'lucide-react';
 import opticalHero from '@/assets/optical-hero.jpg';
 
 export function WelcomeSection() {
@@ -45,9 +45,9 @@ export function WelcomeSection() {
         <div className="absolute inset-0 bg-gradient-hero opacity-90"></div>
         <div className="relative container mx-auto px-4 py-16 text-center">
           <div className="mb-8">
-            <Eye className="w-16 h-16 mx-auto mb-4 text-primary-foreground drop-shadow-lg" />
+            <Glasses className="w-16 h-16 mx-auto mb-4 text-primary-foreground drop-shadow-lg" />
             <h1 className="text-4xl md:text-6xl font-bold text-primary-foreground mb-4 drop-shadow-lg">
-              Sistema de Gestão Ótica – Simples, rápido e eficiente para estoque, vendas e agenda
+              Sistema de Gestão Ótica
             </h1>
             <p className="text-xl text-primary-foreground/90 max-w-2xl mx-auto drop-shadow">
               Organize sua ótica com eficiência, reduza erros e aumente a satisfação dos clientes.
@@ -117,7 +117,7 @@ export function WelcomeSection() {
             onClick={() => setCurrentSection('products')}
             className="px-8 py-4 text-lg"
           >
-            <Eye className="w-5 h-5 mr-2" />
+            <Glasses className="w-5 h-5 mr-2" />
             Começar Agora
           </Button>
         </div>
