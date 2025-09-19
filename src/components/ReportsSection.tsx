@@ -208,6 +208,9 @@ export function ReportsSection() {
                       <p className="text-sm text-muted-foreground">
                         {getProductTypeLabel(product.type)}
                       </p>
+                      <p className="text-sm font-semibold text-accent">
+                        R$ {product.price.toFixed(2)}
+                      </p>
                     </div>
                     <div className="text-right">
                       <span className={`text-lg font-semibold ${

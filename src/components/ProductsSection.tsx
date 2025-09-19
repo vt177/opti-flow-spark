@@ -14,14 +14,15 @@ export function ProductsSection() {
   const [formData, setFormData] = useState({
     name: '',
     type: '' as 'glasses' | 'sunglasses' | 'lenses' | '',
-    quantity: ''
+    quantity: '',
+    price: ''
   });
   const [showForm, setShowForm] = useState(true);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!formData.name || !formData.type || !formData.quantity) {
+    if (!formData.name || !formData.type || !formData.quantity || !formData.price) {
       toast({
         title: "Erro",
         description: "Por favor, preencha todos os campos",
@@ -33,7 +34,8 @@ export function ProductsSection() {
     addProduct({
       name: formData.name,
       type: formData.type as 'glasses' | 'sunglasses' | 'lenses',
-      quantity: parseInt(formData.quantity)
+      quantity: parseInt(formData.quantity),
+      price: parseFloat(formData.price)
     });
 
     toast({
@@ -41,7 +43,7 @@ export function ProductsSection() {
       description: "Deseja adicionar outro produto?",
     });
 
-    setFormData({ name: '', type: '', quantity: '' });
+    setFormData({ name: '', type: '', quantity: '', price: '' });
     setShowForm(false);
   };
 
@@ -129,6 +131,20 @@ export function ProductsSection() {
                   />
                 </div>
 
+                <div>
+                  <Label htmlFor="price">Valor (R$)</Label>
+                  <Input
+                    id="price"
+                    type="number"
+                    min="0"
+                    step="0.01"
+                    value={formData.price}
+                    onChange={(e) => setFormData({ ...formData, price: e.target.value })}
+                    placeholder="Ex: 250.00"
+                    className="mt-1"
+                  />
+                </div>
+
                 <Button type="submit" variant="hero" className="w-full">
                   <Plus className="w-4 h-4 mr-2" />
                   Salvar Produto
@@ -186,10 +202,12 @@ export function ProductsSection() {
                         </p>
                       </div>
                       <div className="text-right">
-                        <span className="text-lg font-semibold text-primary">
-                          {product.quantity}
+                        <div className="text-lg font-semibold text-accent">
+                          R$ {product.price.toFixed(2)}
+                        </div>
+                        <span className="text-sm font-semibold text-primary">
+                          {product.quantity} unidades
                         </span>
-                        <p className="text-xs text-muted-foreground">unidades</p>
                       </div>
                     </div>
                   </div>

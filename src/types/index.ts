@@ -3,6 +3,7 @@ export interface Product {
   name: string;
   type: 'glasses' | 'sunglasses' | 'lenses';
   quantity: number;
+  price: number;
   createdAt: Date;
 }
 
