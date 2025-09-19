@@ -47,10 +47,10 @@ export function WelcomeSection() {
           <div className="mb-8">
             <Eye className="w-16 h-16 mx-auto mb-4 text-primary-foreground drop-shadow-lg" />
             <h1 className="text-4xl md:text-6xl font-bold text-primary-foreground mb-4 drop-shadow-lg">
-              Sistema de Gestão Ótica
+              Sistema de Gestão Ótica – Simples, rápido e eficiente para estoque, vendas e agenda
             </h1>
             <p className="text-xl text-primary-foreground/90 max-w-2xl mx-auto drop-shadow">
-              Organize produtos, vendas e consultas de forma simples e eficiente
+              Organize sua ótica com eficiência, reduza erros e aumente a satisfação dos clientes.
             </p>
           </div>
           
